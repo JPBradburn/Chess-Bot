@@ -30,16 +30,21 @@
 ## 1. Introduction<a name="intro"></a>
 ## Introduction
 
-E-commerce businesses rely heavily on efficient order management systems (OMS) to handle various operational tasks. These systems face several challenges, such as associating orders with customers, identifying items within an order, managing item deletions before finalization, creating different types of orders (e.g., regular, postal), updating order details, searching and sorting orders, tracking order status, and storing and retrieving order data. This project aims to design and develop a simple yet robust order management system using Python, focusing on three key components: the user interface (UI), business logic, and file handling. 
+This project aims to design and develop a chess bot for Lichess using Python, focusing on three key components: the game engine, chess AI (strategy and decision-making), and Lichess API integration (communication and user interface).
 
-The division of the project into these components facilitates maintainability and adaptability, reflecting real-world scenarios where the user interface may span multiple devices and platforms, while the core business logic remains consistent. The project will utilize file handling for data storage instead of database systems, as the latter is beyond the scope of the current syllabus.
+The division of the project into these components ensures maintainability, reflecting real-world scenarios where the user interface (Lichess platform interaction) can evolve, while the core AI logic and game strategies remain consistent. This project will utilize Python and the Lichess API for handling game interactions, allowing the bot to analyze positions, make moves, and communicate with the platform.
 
-![Picture1](https://github.com/sebastian-power/order-management-system/assets/52031320/4471a6ab-bc9a-4604-b8c6-094140ca4ddd)
-<i>Figure 1: Overview of the architecture</i>
+Project Overview:
+Game Engine: This component will focus on handling the rules of chess, move validation, board state representation, and game status tracking. It ensures that the bot operates within the constraints of chess, such as legal moves, castling, en passant, and check/checkmate conditions.
 
-Adhering to the Software Development Life Cycle (SDLC) phases, this project begins with the requirements phase, identifying external actors and their interactions with the system through a context diagram (section 2). The next step involves defining user stories (section 3), followed by project planning to estimate time and effort (section 4). During the analysis phase, abstraction principles help identify potential classes in the OMS (section 5). The design phase includes a detailed discussion of object-oriented programming principles, particularly inheritance (section 6), and input data validation methods (section 7). The formatting of system outputs is covered in section 8, while the ictionary, detailing attribute data types and structures, is discussed in section 9. File-handling algorithm design is explored in section 10, and complex algorithm development for the application logic is presented in sections 11 (pseudocode) and 12 (sorting and searching). Finally, the system's dynamic behavior modeling is addressed in section 13. 
+Chess AI (Strategy and Decision-Making): The AI component will be designed to evaluate different board positions and determine optimal moves. This will involve a minimax algorithm, along with optimizations like alpha-beta pruning, to enhance decision-making. The AI will consider various factors such as material balance, piece activity, and tactical motifs when selecting moves.
 
-This structured approach ensures a comprehensive and systematic development of the order management system, ready to meet the operational demands of an e-commerce environment.
+Lichess Integration (User Interface and Communication): The bot will interact with Lichess using the official API, allowing it to join games, make moves, and analyze positions. The integration will also handle incoming game events (e.g., opponent moves) and send appropriate responses. The bot's interface will be capable of running asynchronously, ensuring that it can react to real-time game updates.
+
+Testing and Refinement: After the initial implementation, the bot will be tested in various game scenarios, including different time controls and opponent strengths. Based on these tests, the AI’s performance will be refined, and the system will be optimized for faster response times and improved decision-making.
+
+Documentation and Finalization: The  phase will include comprehensive documentation, covering how the bot works, how to set it up, and how to use it with Lichess. Additionally, the bot's performance and limitations will be analyzed and reported. This documentation process will be completed throughout the project's development.
+
 
 ## 2. Context Diagram<a name="context"></a>
 The interactions between the end user and the order management system can be depicted via a context diagram, as shown below in Figure 2. Further details of the context diagram are not shown to keep this document brief wherever possible.
