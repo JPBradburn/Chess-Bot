@@ -47,9 +47,9 @@ Documentation and Finalization: The  phase will include comprehensive documentat
 
 
 ## 2. Context Diagram<a name="context"></a>
-The interactions between the end user and the order management system can be depicted via a context diagram, as shown below in Figure 2. Further details of the context diagram are not shown to keep this document brief wherever possible.
+The interactions between the end user and the chess bot can be depicted via a context diagram, as shown below in Figure 2. Further details of the context diagram are not shown to keep this document brief wherever possible.
 
-![Coolest Context Diagram you've ever seen](https://github.com/sebastian-power/order-management-system/blob/main/assets/images/Order%20Management%20System%20High%20Level%20Context%20Diagram.jpg)
+![Coolest Context Diagram you've ever seen](<img width="796" alt="Screenshot 2025-02-06 at 10 03 21 am" src="https://github.com/user-attachments/assets/b7886a3b-058c-4e61-a347-8172c31eed04" />)
 
 <i>Figure 2: Context Diagram (NEW)</i>
 
