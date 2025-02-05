@@ -49,7 +49,8 @@ Documentation and Finalization: The  phase will include comprehensive documentat
 ## 2. Context Diagram<a name="context"></a>
 The interactions between the end user and the chess bot can be depicted via a context diagram, as shown below in Figure 2. Further details of the context diagram are not shown to keep this document brief wherever possible.
 
-![Coolest Context Diagram you've ever seen](<img width="796" alt="Screenshot 2025-02-06 at 10 03 21 am" src="https://github.com/user-attachments/assets/b7886a3b-058c-4e61-a347-8172c31eed04" />)
+![Coolest Context Diagram you've ever seen](<img width="798" alt="Screenshot 2025-02-06 at 10 04 27 am" src="https://github.com/user-attachments/assets/ad4dc476-5100-491d-8e93-eec1f79a9e08" />
+)
 
 <i>Figure 2: Context Diagram (NEW)</i>
 
