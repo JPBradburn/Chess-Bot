@@ -30,7 +30,6 @@ The interactions between the end user and the chess bot can be depicted via a co
 
 ![Coolest Context Diagram you've ever seen](https://github.com/user-attachments/assets/ad4dc476-5100-491d-8e93-eec1f79a9e08)
 
-<i>Figure 2: Context Diagram (NEW)</i>
 
 ## 3. User Stories<a name="stories"></a>
 User Stories are typically used in Agile frameworks to articulate how each software feature will add value to the user. Each user story is the smallest unit of work in an agile framework and has the following structure:
@@ -67,19 +66,9 @@ Green - Testing and Evaluating
 Blue - Project Version Control / Submission
 
 
-<i>Figure 3: Project Management Plan</i>
 ## 5. System Class Diagram<a name="sys_diagram"></a>
 
 ## 6. Object-Orientation in Chess Bot<a name="oms_object"></a>
 
 ## 7. Data Dictionary<a name="data_dict"></a>
-A data dictionary comprehensively describes each attribute and class variable used in the system. Note that it is not all variables. Data dictionaries are valuable during the system's post-delivery maintenance. A data dictionary commonly includes variable name, data type, format, size in bytes, and the number of characters to display the item, including the number of decimal places (if applicable), the purpose of the variable, and a relevant example. Validation rules have been included where applicable. Details of records or arrays of records have been included in data dictionaries. These following figures show the data dictionaries for all 8 classes in the project. The main variables and all class attributes have been included, and variables used solely for logic control have been excluded.
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/711265fd-2725-4e59-9d3b-29ff384da6e9)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/e70a1bf3-b3ac-4cff-b7e8-6aec779ac733)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/4cb4df36-34fe-4f18-b98f-ba400713fe68)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/6705f900-0cef-4542-b7ac-3a2e6f15d37e)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/28e3e345-9415-42ef-840d-75e6b9560243)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/9489f815-4654-4d06-bd3b-6bdc43a98415)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/4a1fac99-1911-43b7-8197-bb8a6719ca76)
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/3b1b5d61-a1af-4dbe-9978-a25e77c6f182)
 
