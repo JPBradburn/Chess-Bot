@@ -111,24 +111,8 @@ UML Class Diagram:
 
 ![Image](https://github.com/sebastian-power/order-management-system/blob/main/assets/images/UML%20Class%20Diagram.drawio.svg)
 
-## 6. Object-Orientation in OMS<a name="oms_object"></a>
-Object-oriented programming is popular because it enables the evaluation of existing classes without changing them. This reduces the maintenance cost. For example, a new inherited class can be created if a new attribute is required for a previously existing class. In Figure 7, inheritance is depicted. A triangular arrow is drawn from the Postal_Order class to the Order class for the inheritance reasons explained in section 5.1.
-## 7. Input Validation in the User Interface<a name="input_val"></a>
-Validating user input on the client side saves valuable maintenance time. This section explains how validation is incorporated when an Order_Item is ordered in an Order. A snippet of the code is provided in Figure 8, and the corresponding runtime interactive output statement is shown in Figure 9. Observe that a list of available products is first displayed, and then a choice is presented to the user to select an item number rather than asking the user to enter the item's name, which is more error-prone. In addition, the code checks for negative values and runtime errors if the user wrongly inputs non-numeric values for the item quantity. Similarly, input validation is performed for other inputs but is not illustrated here for space brevity. Please see the code in the appendix for complete details.
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/b7638213-699d-4880-8032-6eee66245e91)
+## 6. Object-Orientation in Chess Bot<a name="oms_object"></a>
 
-We have also used input validation when checking the email of the usesr. The email must be between 6 and 20 characters, and must not include whitesepace. It must also contain an @ symbol within the email (not at the start or end) just like real emails.
-<img width="707" alt="Screenshot 2024-05-28 at 09 23 38" src="https://github.com/sebastian-power/order-management-system/assets/140695410/2af8f26d-187f-4609-81b1-6da2ff2f35a7">
-
-
-<i>Figure 8: Code snippet for validation during input of an Order_Item</i>
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/5c426f10-4452-43e8-8574-3883e09e1445)
-<i>Figure 9: Runtime example of input validation for Order_Item</i>
-## 8. Formatted Output<a name="format_o"></a>
-A snip of the formatted output provided by the program is shown in Figure 10. 
-![image](https://github.com/sebastian-power/order-management-system/assets/52031320/4c7b2ffa-4b9f-4d11-b62a-7dd5aa695718)
-<i>Figure 10: Formatted Output</i>
-The output clearly illustrates how the Postal Order details are grouped separately and how white space is used for readability.
 ## 9. Data Dictionary<a name="data_dict"></a>
 A data dictionary comprehensively describes each attribute and class variable used in the system. Note that it is not all variables. Data dictionaries are valuable during the system's post-delivery maintenance. A data dictionary commonly includes variable name, data type, format, size in bytes, and the number of characters to display the item, including the number of decimal places (if applicable), the purpose of the variable, and a relevant example. Validation rules have been included where applicable. Details of records or arrays of records have been included in data dictionaries. These following figures show the data dictionaries for all 8 classes in the project. The main variables and all class attributes have been included, and variables used solely for logic control have been excluded.
 ![image](https://github.com/sebastian-power/order-management-system/assets/52031320/711265fd-2725-4e59-9d3b-29ff384da6e9)
@@ -140,8 +124,6 @@ A data dictionary comprehensively describes each attribute and class variable us
 ![image](https://github.com/sebastian-power/order-management-system/assets/52031320/4a1fac99-1911-43b7-8197-bb8a6719ca76)
 ![image](https://github.com/sebastian-power/order-management-system/assets/52031320/3b1b5d61-a1af-4dbe-9978-a25e77c6f182)
 
-## 10. File Handling<a name="file_hand"></a>
-File handling classes such as Customer_DB, Order_DB and Products_DB contain the logic for storing, retrieving, and updating the corresponding data in files. Navigation of these classes is always from the corresponding entity.
 ## 11. Pseudocode and flowchart<a name="pseudo"></a>
 Pseudocode is usually used to illustrate the design of complex system parts. A complex part of a Postal_Order class is the algorithm to find whether a postal order has transitioned through all the states before it is delivered to the customer. This section contains the high-level pseudocode of the has_partial_valid_state_sequence method in the Postal Order class.  The algorithm assumes the valid states of  Postal Order are "Initiated", "Packed", "Shipped", and "Delivered". A postal order can transition from “Initiated” to “Packed” to “Shipped” and then to a “Delivered” state. Please assume that the algorithm needs to keep track of the current and past states as it transitions from one state to another. We can use a variable, states, to hold the list of past states of a Postal_Order. The has_partial_valid_state_sequence method can be used before updating the list of states. From this discussion, it is evident that the list of valid values in the list states can be one of the following: [ ] or  [“Initiated”] or [“Initiated”, “Packed”] or [“Initiated”, “Packed”, “Shipped] or [“Initiated”, “Packed”, “Shipped, “Delivered”]. The algorithm is as follows:
 ```
@@ -244,9 +226,7 @@ Similarly, you must identify all other complex algorithms in each class and writ
 
 ![Image](https://github.com/sebastian-power/order-management-system/blob/main/assets/images/Software%20Flowchart%20Ordering%20Item-Page-1.drawio.svg)]
 ![Image](https://github.com/sebastian-power/order-management-system/blob/main/assets/images/Software%20Flowchart%20Ordering%20Item-Page-2.drawio.svg)]
-## 12. Sorting and Searching<a name="s_and_s"></a>
-<s>Sorting and searching are some of the ubiquitous operations in Information Systems. They are frequently used in order management systems to search for a product among thousands of products, sort the items in an order based on the price or the product's name, etc. Several types of searching and sorting algorithms are used in information systems, and each type's efficiency varies. The HSC exams typically contain questions on sorting and searching. However, this document does not contain any scoring algorithms. Please add a sorting algorithm in the Order class to sort all orders based on each item's product name or price. Alternatively, add a sorting algorithm in a new class that manages all orders. Since the sorting algorithms are standard, you must illustrate that you can adapt them for a specific purpose.</s>
-Mr D'Souza said we should not do this.
+
 ## 13. Messaging (modelling dynamic behaviour) in an Object-Oriented system<a name="messaging"></a>
 Class diagrams do not depict what methods and classes come into play from among the classes and methods in the system. for a specific purpose, such as a user story. For example, a software maintenance engineer may be interested in fixing a feature related to a user story. In such a case, a model such as a class diagram containing all the details of an OO system reduces the maintenance engineer's productivity. Hence, separate models for each user story are essential. In this section, the system's dynamic behaviour for user story 3.2 (As an aged customer, I want to create a Postal Order so that the order can be delivered to my address.) in section 3 is considered. A sequence diagram is usually used to model this, but the HSC syllabus needs to mention it. So, instead, a textual approach will be used to explain how messages are passed from one object to another when a user story needs to be satisfied. In OOP, message passing is a fundamental concept that enables objects to communicate with each other within a program.
 The following invocations of methods from various classes are needed to get a Postal_Order object:
@@ -319,12 +299,15 @@ In summary, each object in an OOP project is a self-contained unit with its data
 
 Sequence Diagram of the System: (Customers can Access their Orders through the AdminUI Method, But can't Add / Remove Products)
 ![Image](https://github.com/sebastian-power/order-management-system/blob/main/assets/images/Software%20Engineering%20Project%20Sequence%20Final%20Diagram.svg)
+
 ### 13.1 Polymorphism in the OSM<a name="polymorph"></a>
 Polymorphism in OOP refers to exhibiting different behaviours by inherited methods with the same signature depending on the associated object. In the OSM, the Postal_Order class inherits from the Order class. The Order class is the parent class, and the Postal_Order class is the child class. Additionally, only the str() method has the same signature. When the str() method is called on an Order object, it returns the string representation instance attributes of the Order object. In contrast, when the same str() method is called on a Postal_Order object, it returns the string representation of the Postal_Order attributes. This is shown below.
 ![image](https://github.com/sebastian-power/order-management-system/assets/52031320/38bfbbcd-2083-4e26-90a3-aa2151adc8d8)
 The above table shows the difference between the two methods regarding additional information, such as the delivery date and the states in the postal order’s str() method. 
+
 ## 14. Code optimisation techniques for better collaboration and maintenance<a name="optimisation"></a>
 Most Information System projects are created in groups. An essential component of collaboration within object-oriented programming is the ability for developers to understand how each other operates. This can be done in several ways. One approach is providing Intrinsic and extrinsic documentation during the SDLC phases. Another way is by providing a consistent directory structure for each team member’s source code. These two approaches are considered below.
+
 ### 14.1 Intrinsic and extrinsic documentation<a name="docs"></a>
 Intrinsic documentation exists within the code and directly relates to its readability and understanding. It facilitates collaboration among team members by providing context and guidance. Examples of intrinsic documentation include (i) Using meaningful names for variables, classes, functions and code directories. (ii) Adding comments in the code to provide explanations, clarify intent, or guide other programmers. (iii) Consistent naming conventions for variable, function, and class names enhance code readability. (iv) Inline documentation in the form of brief explanations within the code for method signatures and parameter descriptions. A cursory glance at the source code in the appendix indicates these conventions have been followed. An example is given below:
 ```
