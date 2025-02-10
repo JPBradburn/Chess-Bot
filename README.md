@@ -57,39 +57,35 @@ The interactions between the end user and the chess bot can be depicted via a co
 User Stories are typically used in Agile frameworks to articulate how each software feature will add value to the user. Each user story is the smallest unit of work in an agile framework and has the following structure:
 “As a [person], I [want to], [so that].”  
 
-As a sales manager, I want to be able to view all the products that are ordered so I know which ones are the most popular.
+As a Chess Enthusiast, I want to be able to challenge the chess bot with varying difficulty levels, so that I can improve my skills at my own pace.
 
-As a Customer, I want to be able to search for my existing orders so that I can receive information about the order and/or update the order.
+As a New Player, I want to be able to get hints or suggestions from the chess bot during the game, so that I can learn from my mistakes and improve.
 
-As a Postal Order customer, I want to track the status of my order so that I can be sure it is delivered at home.
+As a Player with a Busy Schedule, I want to be able to start a game and pause it, so that I can return later without losing progress.
 
-As a Customer with a busy schedule, I want to be able to choose between a store and postal order and be provided information about delivery dates for the latter.
-So that I can experience the utmost convenience and stay informed about the delivery status of my order.
+As a Chess Coach, I want to be able to see what the best stategies are so that I can teach my students well.
 
-As a customer without a mouse, I want to be able to utilise my keyboard while interfacing with a CLI to order my products. This is preffereble to a GUI because I have an unresponsive trackpad.
+As an Advanced Player, I want to be able to adjust the chess bot’s style of play (aggressive, defensive, etc.), so that I can challenge myself with different types of strategies.
 
-As an elderly customer, I want to be able to order postal orders to be as convenient as store orders so that I am not discriminated against for my age.
-
-As a Manager, I want to be able to add/remove products from the product list, so that we can provide an up-to-date list of products for our customers
-
-As a Manager, I want to be able to view all of the pending orders in the system, so that I can keep track of the orders and ensure that all orders are fulfilled
+As a Competitive Player, I want to be able to increase the difficulty of the bot so that I can constantly challenge myself.
 
 </ol>
 
 ## 4. Project Plan<a name="plan"></a>
 The project is planned to be completed in 5 weeks. Observe that the project plan includes planning, analysis, design, implementation and testing tasks from the Software Development Life Cycle (SDLC). It also includes details such as how much of the work is accomplished and the roles of each team member.
 
-![Online Gantt 20240604](https://github.com/sebastian-power/order-management-system/assets/140695410/3f684172-01b6-4b67-88d4-08af8c64114e)
+<img width="1056" alt="Screenshot 2025-02-10 at 12 40 06 pm" src="https://github.com/user-attachments/assets/ad0d41d5-e4a5-4db1-8b66-3d8376abf506" />
+
 Key:
-Black - task grouping
+Red - Identifying and Designing
 
-Green - all
+Orange - Research and Planning
 
-Orange - Olvier
+Yellow - Producing and Implementing
 
-Blue - James
+Green - Testing and Evaluating
 
-Purple - Sebastian
+Blue - Project Version Control / Submission
 
 
 <i>Figure 3: Project Management Plan</i>
