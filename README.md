@@ -70,5 +70,95 @@ Blue - Project Version Control / Submission
 
 ## 6. Object-Orientation in Chess Bot<a name="oms_object"></a>
 
+This chess implementation leverages object-oriented programming principles through several key classes that handle different aspects of the game. Here's how OOP is used throughout the project:
+
+### ChessGame Class
+The main game class that coordinates all components and manages the game loop. It uses composition to combine the renderer, game state, and coordinate converter into a cohesive system.
+
+```python
+class ChessGame:
+    def __init__(self):
+        self.renderer = ChessRenderer(Config.WINDOW_SIZE)
+        self.coords_converter = CoordinateConverter(Config.SQUARE_SIZE)
+        self.game_state = GameState()
+```
+
+### ChessRenderer Class
+Handles all visual aspects of the game, encapsulating the complexity of rendering chess pieces, the board, and game status:
+
+```python
+class ChessRenderer:
+    def draw_board(self, screen: pygame.Surface):
+        """Draw the chess board squares with alternating colors."""
+        for row in range(8):
+            for col in range(8):
+                x = col * self.square_size
+                y = row * self.square_size + Config.BOARD_OFFSET
+                color = Colors.GREEN if (row + col) % 2 == 0 else Colors.BROWN
+                pygame.draw.rect(screen, color, (x, y, self.square_size, self.square_size))
+```
+
+### GameState Class
+Manages the game's state using the python-chess library, handling moves and validating game rules:
+
+```python
+class GameState:
+    def handle_click(self, clicked_square: chess.Square):
+        """Handle player clicks on the chess board."""
+        if clicked_square is None or self.board.is_game_over():
+            return
+```
+
+### CoordinateConverter Class
+Provides conversion between screen coordinates and chess board positions:
+
+```python
+class CoordinateConverter:
+    def coords_to_square(self, pos: Tuple[int, int]) -> chess.Square:
+        """Convert screen coordinates to chess board square."""
+        x, y = pos
+        y -= Config.BOARD_OFFSET  # Subtract offset for coordinate conversion
+        if y < 0:  # Click above the board
+            return None
+        col = x // self.square_size
+        row = 7 - (y // self.square_size)
+        return chess.square(col, row)
+```
+
+### Key OOP Principles Used
+
+1. **Encapsulation**
+   - Each class manages its own data and methods
+   - Internal implementation details are hidden
+   - Clean public interfaces for interaction
+
+2. **Single Responsibility**
+   - ChessGame: Game flow and coordination
+   - ChessRenderer: Visual representation
+   - GameState: Game rules and state
+   - CoordinateConverter: Coordinate transformations
+
+3. **Composition**
+   - Classes are composed rather than inherited
+   - Components can be modified independently
+   - Flexible architecture for future changes
+
+4. **Clean Interfaces**
+   - Well-defined method signatures
+   - Clear separation of concerns
+   - Type hints for better code clarity
+
+This object-oriented approach makes the code:
+-  Modular and maintainable
+-  Easy to modify and extend
+-  Simple to test
+-  Clear to understand
+
+The use of classes creates a robust foundation for adding new features, such as:
+- Additional piece types
+- Different game modes
+- Custom rule sets
+- AI opponents
+
 ## 7. Data Dictionary<a name="data_dict"></a>
 
