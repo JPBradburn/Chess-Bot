@@ -68,6 +68,10 @@ Blue - Project Version Control / Submission
 
 ## 5. System Class Diagram<a name="sys_diagram"></a>
 
+![eNp1VNFu4jAQfOcr8pgKyAfkoSqFQJF6TY9wRWqFItdZwDpj52wHdHe6fz87dhonQKREyu54dmbX9oNUSKjqSAcDTJGUwZRTLmTwdxDoZ_i4SjcvcbCuSgo2slglSTfytFw8Pet33Ym-TZ6Xs_xb-pY04X9tCbYj-6bEZvkySzd5tnzXSMKUK5xOVrM8nc-zZO2Fs-8_JqukD35dJlM_2FY6gJQrYAUIEK7g-ExYwc-5JH-g](https://github.com/user-attachments/assets/079cf817-be2f-4cc3-b4e2-fc839a95c588)
+
+
+
 ## 6. Object-Orientation in Chess Bot<a name="oms_object"></a>
 
 This chess implementation leverages object-oriented programming principles through several key classes that handle different aspects of the game. Here's how OOP is used throughout the project:
