@@ -119,4 +119,145 @@ class ChessAI:
 | `buttons` | `list` | Stores clickable button areas for menu selection |
 
 ## 8. Testing<a name="testing"></a>
+## 8. Testing<a name="testing"></a>
 
+The chess program implements comprehensive testing strategies to ensure reliability and correct functionality across all components.
+
+### 8.1 Unit Testing
+
+Unit tests are implemented using Python's built-in `unittest` framework, focusing on individual components and their functionality.
+
+#### Key Test Cases:
+
+1. **Board Initialization Tests**
+   - Verify correct piece placement
+   - Validate initial game state
+   - Check starting player (White)
+
+```python
+def test_initial_board_setup(self):
+    self.assertEqual(str(self.game_state.board.piece_at(chess.E1)), 'K')
+    self.assertEqual(str(self.game_state.board.piece_at(chess.E8)), 'k')
+```
+
+2. **Coordinate Conversion Tests**
+   - Screen coordinates to board positions
+   - Board positions to screen coordinates
+   - Boundary condition handling
+
+3. **Move Validation Tests**
+   - Legal pawn movements
+   - Valid piece selections
+   - Invalid move handling
+
+4. **AI Component Tests**
+   - Position evaluation accuracy
+   - Move generation correctness
+   - Decision-making logic
+
+### 8.2 Test Coverage
+
+| Component | Notes |
+|-----------|-------|
+| Game State | Core game logic fully tested |
+| AI Logic | Position evaluation and move selection |
+| UI/Renderer | Visual components and user interaction |
+| Coordinate System | Complete coverage of conversion logic |
+
+### 8.3 Test Implementation
+
+Test execution is managed through a dedicated test suite in `test_chess_game.py`. Tests can be run using:
+
+```bash
+python -m unittest test_chess_game.py
+```
+
+For verbose output:
+```bash
+python -m unittest -v test_chess_game.py
+```
+
+### 8.4 Testing Approach
+
+1. **White Box Testing**
+   - Internal logic verification
+   - Path coverage analysis
+   - Branch testing for decision points
+
+2. **Black Box Testing**
+   - Input validation
+   - Game flow verification
+   - User interface interaction
+
+3. **Integration Testing**
+   - Component interaction verification
+   - Game mode transitions
+   - State management between modules
+
+### 8.5 Test Categories
+
+#### Functional Tests
+- Game rule enforcement
+- Move validation
+- Checkmate detection
+- Stalemate recognition
+- Special move handling (castling, en passant)
+
+#### Performance Tests
+- AI response time
+- UI rendering efficiency
+- Game state updates
+
+#### User Interface Tests
+- Menu navigation
+- Piece selection
+- Move visualization
+- Game status display
+
+### 8.6 Known Limitations
+
+1. **AI Testing**
+   - Deep position analysis limited by test runtime constraints
+   - Complex positional evaluation scenarios
+
+2. **GUI Testing**
+   - Event handling coverage limited by automated testing capabilities
+   - Some visual aspects require manual verification
+
+### 8.7 Future Test Improvements
+
+1. **Automated Integration Tests**
+   - Implement end-to-end game simulations
+   - Add comprehensive game flow validation
+
+2. **Performance Benchmarks**
+   - Establish baseline performance metrics
+   - Monitor AI decision time across different board states
+
+3. **Test Data Generation**
+   - Create more diverse board positions for testing
+   - Generate complex game scenarios automatically
+
+### 8.8 Running Tests
+
+To execute the test suite:
+
+1. Ensure all dependencies are installed:
+```bash
+pip install pygame python-chess
+```
+
+2. Navigate to the project directory
+3. Run the test suite:
+```bash
+python test_chess_game.py
+```
+
+4. Review test results in the console output
+
+### 8.9 Test Maintenance
+
+- Regular updates to test cases as features are added
+- Periodic review of test coverage
+- Documentation of new test cases
+- Version control integration for test history
