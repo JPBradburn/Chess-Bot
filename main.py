@@ -1,5 +1,4 @@
 import pygame
-import chess
 import sys
 import two_player_game
 import play_as_white_vs_ai
@@ -71,13 +70,6 @@ class ChessGame:
             play_as_black_vs_ai.main()
             pygame.quit()
             sys.exit()
-
-    def play_two_player(self):
-        """Start the two-player chess game (use your existing game logic here)."""
-        print("Starting Two Player Mode...")
-        two_player_game.main()
-        pygame.quit()
-        sys.exit()
 
 
 def main():

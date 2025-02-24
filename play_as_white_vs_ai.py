@@ -1,8 +1,7 @@
 import pygame
 import chess
 import sys
-from typing import Optional, Tuple, Dict
-import random
+from typing import Optional, Tuple
 
 
 class Colors:
