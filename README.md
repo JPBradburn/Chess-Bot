@@ -1,168 +1,120 @@
-# Chess-Bot
+# Chess Program
 
- - **1.** [Introduction](#intro) 
- - **2.** [Context Diagram](#context) 
- - **3.** [User Stories](#stories) 
- - **4.** [Project Plan](#plan) 
+ - **1.** [Introduction](#intro)
+ - **2.** [Context Diagram](#context)
+ - **3.** [User Stories](#stories)
+ - **4.** [Project Plan](#plan)
  - **5.** [System Class Diagram](#sys_diagram)
- - **6.** [Object-Orientation in OMS](#oms_object)
+ - **6.** [Object-Orientation in Chess Program](#oop_chess)
  - **7.** [Data Dictionary](#data_dict)
 
 ## 1. Introduction<a name="intro"></a>
-## Introduction
 
-This project aims to design and develop a chess bot for Lichess using Python, focusing on three key components: the game engine, chess AI (strategy and decision-making), and Lichess API integration (communication and user interface).
+### Introduction
 
-The division of the project into these components ensures maintainability, reflecting real-world scenarios where the user interface (Lichess platform interaction) can evolve, while the core AI logic and game strategies remain consistent. This project will utilize Python and the Lichess API for handling game interactions, allowing the bot to analyze positions, make moves, and communicate with the platform.
+This project aims to design and develop a local chess program in Python, allowing users to play either against another player or an AI opponent. The program will include a chess engine for move validation and game state tracking, a computer opponent using a minimax algorithm, and a graphical user interface for seamless gameplay.
 
-Project Overview:
-Game Engine: This component will focus on handling the rules of chess, move validation, board state representation, and game status tracking. It ensures that the bot operates within the constraints of chess, such as legal moves, castling, en passant, and check/checkmate conditions.
+### Project Overview:
 
-Chess AI (Strategy and Decision-Making): The AI component will be designed to evaluate different board positions and determine optimal moves. This will involve a minimax algorithm, along with optimizations like alpha-beta pruning, to enhance decision-making. The AI will consider various factors such as material balance, piece activity, and tactical motifs when selecting moves.
-
-Testing and Refinement: After the initial implementation, the bot will be tested in various game scenarios, including different time controls and opponent strengths. Based on these tests, the AI’s performance will be refined, and the system will be optimized for faster response times and improved decision-making.
-
-Documentation and Finalization: The  phase will include comprehensive documentation, covering how the bot works, how to set it up, and how to use it with Lichess. Additionally, the bot's performance and limitations will be analyzed and reported. This documentation process will be completed throughout the project's development.
-
+- **Game Engine**: This component will manage chess rules, move validation, board representation, and game state tracking (e.g., check, checkmate, stalemate, castling, en passant, etc.).
+- **AI Opponent**: The AI will evaluate board positions and make optimal moves using a minimax and alpha-beta pruning algorithm.
+- **User Interface**: The program will feature a local interface that allows players to interact with the game.
 
 ## 2. Context Diagram<a name="context"></a>
-The interactions between the end user and the chess bot can be depicted via a context diagram, as shown below in Figure 2. Further details of the context diagram are not shown to keep this document brief wherever possible.
 
-![Coolest Context Diagram you've ever seen](https://github.com/user-attachments/assets/ad4dc476-5100-491d-8e93-eec1f79a9e08)
+The interactions between the user and the chess program can be depicted through a context diagram, illustrating local gameplay and AI-based interactions.
 
+![Context Diagram](https://github.com/user-attachments/assets/ad4dc476-5100-491d-8e93-eec1f79a9e08)
 
 ## 3. User Stories<a name="stories"></a>
-User Stories are typically used in Agile frameworks to articulate how each software feature will add value to the user. Each user story is the smallest unit of work in an agile framework and has the following structure:
-“As a [person], I [want to], [so that].”  
 
-As a Chess Enthusiast, I want to be able to challenge the chess bot with varying difficulty levels, so that I can improve my skills at my own pace.
+User stories define how the software features will add value to users. Each user story follows the format:  
+**"As a [type of user], I [want to], [so that]."**
 
-As a New Player, I want to be able to get hints or suggestions from the chess bot during the game, so that I can learn from my mistakes and improve.
-
-As a Player with a Busy Schedule, I want to be able to start a game and pause it, so that I can return later without losing progress.
-
-As a Chess Coach, I want to be able to see what the best stategies are so that I can teach my students well.
-
-As an Advanced Player, I want to be able to adjust the chess bot’s style of play (aggressive, defensive, etc.), so that I can challenge myself with different types of strategies.
-
-As a Competitive Player, I want to be able to increase the difficulty of the bot so that I can constantly challenge myself.
-
-</ol>
+- **As a Casual Player**, I want to play against a friend locally, so that we can enjoy a game without needing an internet connection.
+- **As a Chess Enthusiast**, I want to play against an AI with different difficulty levels, so that I can practice and improve my skills.
+- **As a Beginner**, I want to get hints or suggested moves, so that I can learn chess strategies while playing.
+- **As an Advanced Player**, I want to customize the AI’s playstyle (aggressive, defensive, etc.), so that I can challenge myself in different ways.
+- **As a Player with Limited Time**, I want to save and resume games, so that I can continue my matches later.
 
 ## 4. Project Plan<a name="plan"></a>
-The project is planned to be completed in 6 weeks.
 
-<img width="1056" alt="Screenshot 2025-02-10 at 12 40 06 pm" src="https://github.com/user-attachments/assets/ad0d41d5-e4a5-4db1-8b66-3d8376abf506" />
+The project is structured over six weeks with different phases of development:
 
-Key:
-Red - Identifying and Designing
+![Project Plan](https://github.com/user-attachments/assets/ad0d41d5-e4a5-4db1-8b66-3d8376abf506)
 
-Orange - Research and Planning
-
-Yellow - Producing and Implementing
-
-Green - Testing and Evaluating
-
-Blue - Project Version Control / Submission
-
+### Key Phases:
+- **Red** - System Design and Architecture Planning
+- **Orange** - Research and AI Algorithm Development
+- **Yellow** - Implementation of Game Engine and GUI
+- **Green** - Testing and Bug Fixing
+- **Blue** - Finalization and Documentation
 
 ## 5. System Class Diagram<a name="sys_diagram"></a>
 
-![eNp1VNFu4jAQfOcr8pgKyAfkoSqFQJF6TY9wRWqFItdZwDpj52wHdHe6fz87dhonQKREyu54dmbX9oNUSKjqSAcDTJGUwZRTLmTwdxDoZ_i4SjcvcbCuSgo2slglSTfytFw8Pet33Ym-TZ6Xs_xb-pY04X9tCbYj-6bEZvkySzd5tnzXSMKUK5xOVrM8nc-zZO2Fs-8_JqukD35dJlM_2FY6gJQrYAUIEK7g-ExYwc-5JH-g](https://github.com/user-attachments/assets/079cf817-be2f-4cc3-b4e2-fc839a95c588)
+![Class Diagram](https://github.com/user-attachments/assets/079cf817-be2f-4cc3-b4e2-fc839a95c588)
 
+## 6. Object-Orientation in Chess Program<a name="oop_chess"></a>
 
+This chess program follows object-oriented programming (OOP) principles for better maintainability and modularity.
 
-## 6. Object-Orientation in Chess Bot<a name="oms_object"></a>
+### **Key Classes:**
 
-This chess implementation leverages object-oriented programming principles through several key classes that handle different aspects of the game. Here's how OOP is used throughout the project:
-
-### ChessGame Class
-The main game class that coordinates all components and manages the game loop. It uses composition to combine the renderer, game state, and coordinate converter into a cohesive system.
+#### ChessGame Class (Main Controller)
+Manages the game loop, board state, and user input.
 
 ```python
 class ChessGame:
     def __init__(self):
-        self.renderer = ChessRenderer(Config.WINDOW_SIZE)
-        self.coords_converter = CoordinateConverter(Config.SQUARE_SIZE)
-        self.game_state = GameState()
+        self.renderer = ChessRenderer()
+        self.board = GameState()
+        self.ai = ChessAI()
 ```
 
-### ChessRenderer Class
-Handles all visual aspects of the game, encapsulating the complexity of rendering chess pieces, the board, and game status:
+#### ChessRenderer Class (GUI and Display)
+Handles drawing the board, pieces, and move highlights.
 
 ```python
 class ChessRenderer:
-    def draw_board(self, screen: pygame.Surface):
-        """Draw the chess board squares with alternating colors."""
+    def draw_board(self, screen):
         for row in range(8):
             for col in range(8):
-                x = col * self.square_size
-                y = row * self.square_size + Config.BOARD_OFFSET
-                color = Colors.GREEN if (row + col) % 2 == 0 else Colors.BROWN
-                pygame.draw.rect(screen, color, (x, y, self.square_size, self.square_size))
+                color = (200, 200, 200) if (row + col) % 2 == 0 else (100, 100, 100)
+                pygame.draw.rect(screen, color, (col * 80, row * 80, 80, 80))
 ```
 
-### GameState Class
-Manages the game's state using the python-chess library, handling moves and validating game rules:
+#### GameState Class (Game Logic)
+Manages board positions, move validation, and checkmate conditions.
 
 ```python
 class GameState:
-    def handle_click(self, clicked_square: chess.Square):
-        """Handle player clicks on the chess board."""
-        if clicked_square is None or self.board.is_game_over():
-            return
+    def is_legal_move(self, move):
+        return move in self.board.legal_moves
 ```
 
-### CoordinateConverter Class
-Provides conversion between screen coordinates and chess board positions:
+#### ChessAI Class (AI Opponent)
+Implements decision-making using minimax and alpha-beta pruning.
 
 ```python
-class CoordinateConverter:
-    def coords_to_square(self, pos: Tuple[int, int]) -> chess.Square:
-        """Convert screen coordinates to chess board square."""
-        x, y = pos
-        y -= Config.BOARD_OFFSET  # Subtract offset for coordinate conversion
-        if y < 0:  # Click above the board
-            return None
-        col = x // self.square_size
-        row = 7 - (y // self.square_size)
-        return chess.square(col, row)
+class ChessAI:
+    def choose_best_move(self, board):
+        best_move = self.minimax(board, depth=3)
+        return best_move
 ```
 
-### Key OOP Principles Used
-
-1. **Encapsulation**
-   - Each class manages its own data and methods
-   - Internal implementation details are hidden
-   - Clean public interfaces for interaction
-
-2. **Single Responsibility**
-   - ChessGame: Game flow and coordination
-   - ChessRenderer: Visual representation
-   - GameState: Game rules and state
-   - CoordinateConverter: Coordinate transformations
-
-3. **Composition**
-   - Classes are composed rather than inherited
-   - Components can be modified independently
-   - Flexible architecture for future changes
-
-4. **Clean Interfaces**
-   - Well-defined method signatures
-   - Clear separation of concerns
-   - Type hints for better code clarity
-
-This object-oriented approach makes the code:
--  Modular and maintainable
--  Easy to modify and extend
--  Simple to test
--  Clear to understand
-
-The use of classes creates a robust foundation for adding new features, such as:
-- Additional piece types
-- Different game modes
-- Custom rule sets
-- AI opponents
+### **OOP Principles Used:**
+- **Encapsulation**: Each class manages its own responsibilities (e.g., game state, AI logic, rendering).
+- **Single Responsibility Principle**: ChessGame controls the game flow, ChessRenderer handles the UI, and ChessAI manages decision-making.
+- **Modularity**: Components can be updated or replaced independently.
 
 ## 7. Data Dictionary<a name="data_dict"></a>
+
+| Variable | Type | Description |
+|----------|------|-------------|
+| `board` | `chess.Board` | Stores the current board position and move history |
+| `player_turn` | `bool` | Indicates whether it is White’s or Black’s turn |
+| `legal_moves` | `list` | Contains all possible legal moves for the current position |
+| `ai_difficulty` | `int` | Sets the AI's difficulty level (1-5) |
+
+This structured approach ensures an efficient, extensible, and user-friendly chess program for local play.
 
