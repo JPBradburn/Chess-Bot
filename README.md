@@ -7,6 +7,7 @@
  - **5.** [System Class Diagram](#sys_diagram)
  - **6.** [Object-Orientation in Chess Program](#oop_chess)
  - **7.** [Data Dictionary](#data_dict)
+ - **8.** [Testing](#testing)
 
 ## 1. Introduction<a name="intro"></a>
 
@@ -116,4 +117,5 @@ class ChessAI:
 | `font` | `pygame.font.Font` | Font object used for rendering text |
 | `buttons` | `list` | Stores clickable button areas for menu selection |
 
+## 8. Testing<a name="testing"></a>
 
