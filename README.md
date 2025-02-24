@@ -25,7 +25,8 @@ This project aims to design and develop a local chess program in Python, allowin
 
 The interactions between the user and the chess program can be depicted through a context diagram, illustrating local gameplay and AI-based interactions.
 
-![Context Diagram](https://github.com/user-attachments/assets/ad4dc476-5100-491d-8e93-eec1f79a9e08)
+<img width="616" alt="image" src="https://github.com/user-attachments/assets/7c0bf90b-86f9-4e40-9887-40ef18fc6ece" />
+
 
 ## 3. User Stories<a name="stories"></a>
 
