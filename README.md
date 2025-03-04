@@ -61,6 +61,8 @@ This chess program follows object-oriented programming (OOP) principles for bett
 
 ### **Key Classes:**
 
+These highlight the main functionality of the classes. However, these are not the full classes.
+
 #### ChessGame Class (Main Controller)
 Manages the game loop, board state, and user input.
 
@@ -117,9 +119,7 @@ class ChessAI:
 | `running` | `bool` | Determines whether the game is running |
 | `mode` | `str` | Stores the selected game mode (two-player or AI) |
 | `font` | `pygame.font.Font` | Font object used for rendering text |
-| `buttons` | `list` | Stores clickable button areas for menu selection |
 
-## 8. Testing<a name="testing"></a>
 ## 8. Testing<a name="testing"></a>
 
 The chess program implements comprehensive testing strategies to ensure reliability and correct functionality across all components.
