@@ -112,13 +112,14 @@ class ChessAI:
 
 ## 7. Data Dictionary<a name="data_dict"></a>
 
-| Variable | Type | Description |
-|----------|------|-------------|
-| `screen` | `pygame.Surface` | The main game display surface |
-| `clock` | `pygame.time.Clock` | Manages game loop timing |
-| `running` | `bool` | Determines whether the game is running |
-| `mode` | `str` | Stores the selected game mode (two-player or AI) |
-| `font` | `pygame.font.Font` | Font object used for rendering text |
+| Variable            | Data type               | Display format       | Size in bytes | Display size in bytes | Description                      | Example                   | Validation                 |
+|---------------------|------------------------|----------------------|--------------|-------------------|----------------------------------|---------------------------|---------------------------|
+| `board`        | `imported class from library`   | N/A                  | Variable     | Variable         | The main game display surface   | `Board()`                  | Must be a valid `Board` object |
+| `selected_square` | `Optional[chess.Square]` | (x, y)                | 8            | 8                 | Currently selected chess square | `None` or `chess.Square`  | Must be `None` or `chess.Square` |
+| `valid_moves`  | `imported class from library`  | List of `Move` objects | Variable | Variable | Stores all valid moves         | `[Move(...), Move(...)]`   | List elements must be of type `Move` |
+| `player_color` | `bool`                  | `True`/`False`        | 1            | 1                 | Indicates the player's color (`True` for white, `False` for black) | `True` | Must be `True` or `False` |
+
+
 
 ## 8. Testing<a name="testing"></a>
 
