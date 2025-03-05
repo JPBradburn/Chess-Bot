@@ -59,56 +59,92 @@ The project is structured over six weeks with different phases of development:
 
 This chess program follows object-oriented programming (OOP) principles for better maintainability and modularity.
 
-### **Key Classes:**
+### **Classes:**
 
 These highlight the main functionality of the classes. However, these are not the full classes.
 
-#### ChessGame Class (Main Controller)
-Manages the game loop, board state, and user input.
+All classes used:
 
 ```python
 class ChessGame:
-    def __init__(self):
-        self.renderer = ChessRenderer()
-        self.board = GameState()
-        self.ai = ChessAI()
+def __init__(self):
+   """Initialize the renderer."""
+def draw_menu(self):
+   """Draw the initial game menu."""
+def menu(self):
+   """Handle menu interactions to select game mode."""
+def run(self):
+   """Start the game based on the selected mode."""
 ```
 
-#### ChessRenderer Class (GUI and Display)
-Handles drawing the board, pieces, and move highlights.
+
+```python
+class Colors:
+   """Static class containing color definitions for the chess board and pieces."""
+```
+
+
+```python
+class Config:
+   """Static class containing game configuration constants."""
+```
+
 
 ```python
 class ChessRenderer:
-    def draw_board(self, screen):
-        for row in range(8):
-            for col in range(8):
-                x = col * self.square_size
-                y = (row * self.square_size) + Config.BOARD_OFFSET
+   """Handles all visual rendering aspects of the chess game."""
+def __init__(self, window_size: int):
+   """Initialize the renderer with window size and cache for piece images."""
+def _initialize_piece_images(self):
+   """Load and cache piece images."""
+def draw_board(self, screen: pygame.Surface):
+   """Draw the chess board squares with alternating colors."""
+def draw_piece(self, screen: pygame.Surface, piece: chess.Piece, position: Tuple[int, int]):
+   """Draw a chess piece at the specified position using cached PNG image."""
+def draw_highlights(self, screen: pygame.Surface, selected_square: Optional[int],
+                   valid_moves: list, coords_converter):
+   """Draw highlights for selected square and valid moves."""
+def draw_status(self, screen: pygame.Surface, board: chess.Board):
+   """Draw game status (current turn or game over message)."""
 ```
 
-#### GameState Class (Game Logic)
-Manages board positions, move validation, and checkmate conditions.
+
+```python
+class CoordinateConverter:
+   """Handles conversion between screen coordinates and chess board squares."""
+def __init__(self, square_size: int):
+   """Initialises the conversion"""
+def coords_to_square(self, pos: Tuple[int, int]) -> chess.Square:
+def square_to_coords(self, square: chess.Square) -> Tuple[int, int]:
+```
+
 
 ```python
 class GameState:
-    def is_legal_move(self, move):
-        return move in self.board.legal_moves
+   """Manages the chess game state and move validation."""
+def handle_click(self, clicked_square: chess.Square):
+   """Handles any user clicks on the board"""
 ```
-
-#### ChessAI Class (AI Opponent)
-Implements decision-making using minimax and alpha-beta pruning.
 
 ```python
 class ChessAI:
-    def choose_best_move(self, board):
-        best_move = self.minimax(board, depth=3)
-        return best_move
+   """Simple chess AI using minimax with depth 3."""
+def evaluate_position(self, board: chess.Board) -> float:
+   """Evaluate the current board position."""
+def minimax(self, board: chess.Board, depth: int, alpha: float, beta: float, maximizing: bool) -> Tuple[
+   float, Optional[chess.Move]]:
+   """Minimax function that uses recursion to calculate best move"""
+def get_best_move(self, board: chess.Board) -> chess.Move:
+   """Get the best move for the current position."""
 ```
 
-### **OOP Principles Used:**
-- **Encapsulation**: Each class manages its own responsibilities (e.g., game state, AI logic, rendering).
-- **Single Responsibility Principle**: ChessGame controls the game flow and handles menu interactions.
-- **Modularity**: Components (e.g., `two_player_game`, `play_as_white_vs_ai`, `play_as_black_vs_ai`) can be updated independently.
+This chess game follows the four OOP principles:
+Encapsulation: Each class encapsulates specific functionality. ChessRenderer._initialize_piece_images() keeps image caching private, while GameState.handle_click() restricts direct game state modifications.
+Abstraction: ChessGame.run() hides game setup details, and ChessAI.get_best_move() abstracts AI logic, preventing direct interaction with minimax().
+Polymorphism: ChessRenderer.draw_board(), draw_piece(), and draw_status() share a common screen parameter but perform different rendering tasks. ChessAI.minimax() adjusts behavior for maximizing or minimizing moves.
+These principles make the code modular, maintainable, and extensible.
+
+
 
 ## 7. Data Dictionary<a name="data_dict"></a>
 
