@@ -128,7 +128,7 @@ class CoordinateConverter:
 
 
 class ChessAI:
-    """Simple chess AI using minimax with depth 2."""
+    """Simple chess AI using minimax with depth 3."""
 
     PIECE_VALUES = {
         chess.PAWN: 100,
@@ -195,6 +195,7 @@ class ChessAI:
 
     def minimax(self, board: chess.Board, depth: int, alpha: float, beta: float, maximizing: bool) -> Tuple[
         float, Optional[chess.Move]]:
+        """Minimax function that uses recursion to calculate best move"""
         if depth == 0 or board.is_game_over():
             return self.evaluate_position(board), None
 

@@ -128,7 +128,7 @@ class CoordinateConverter:
 
 
 class ChessAI:
-    """Simple chess AI using minimax with depth 2."""
+    """Simple chess AI using minimax with depth 3."""
 
     PIECE_VALUES = {
         chess.PAWN: 100,

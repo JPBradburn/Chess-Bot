@@ -7,6 +7,7 @@ import play_as_black_vs_ai
 
 class ChessGame:
     def __init__(self):
+        """Initialize the renderer."""
         pygame.init()
         self.screen = pygame.display.set_mode((600, 640))  # Adjust window size for menu
         pygame.display.set_caption('Chess Game')

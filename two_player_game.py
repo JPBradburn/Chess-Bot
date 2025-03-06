@@ -112,6 +112,7 @@ class CoordinateConverter:
     """Handles conversion between screen coordinates and chess board squares."""
 
     def __init__(self, square_size: int):
+        """Initialises the conversion"""
         self.square_size = square_size
 
     def coords_to_square(self, pos: Tuple[int, int]) -> chess.Square:
@@ -138,6 +139,7 @@ class GameState:
         self.valid_moves = []
 
     def handle_click(self, clicked_square: chess.Square):
+        """Handles any user clicks on the board"""
         if clicked_square is None or self.board.is_game_over():
             return
 
